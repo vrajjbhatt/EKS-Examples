@@ -1,0 +1,14 @@
+Resources:
+  myCluster:
+    Type: 'AWS::EKS::Cluster'
+    Properties:
+      Name: prod
+      Version: '1.14'
+      RoleArn: >-
+        arn:aws:iam::iam-id:role/eks-service-role-AWSServiceRoleForAmazonEKS-EXAMPLE
+      ResourcesVpcConfig:
+        SecurityGroupIds:
+          - securitygroupid
+        SubnetIds:
+          - subnetid-2
+          - subnetid-1
